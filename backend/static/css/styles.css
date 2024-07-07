@@ -1,0 +1,306 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-color: #ff6600;
+    --secondary-color: #333;
+    --background-color: #f8f8f8;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--secondary-color);
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    transition: top 0.3s;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: var(--font-secondary);
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    padding: 10px 25px;
+    position: relative;
+    transition: color 0.3s;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-warning {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-warning:hover {
+    background-color: #e65c00;
+    border-color: #e65c00;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('herobg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 0 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-family: var(--font-secondary);
+    max-width: 680px;
+    margin: 0 auto 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 710px;
+    margin: 0 auto 20px;
+}
+
+.hero .btn {
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* About Us Section */
+.about-us {
+    padding: 60px 20px;
+    background: #f8f8f8;
+    color: #333;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #333;
+}
+
+.about-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.about-description {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.feature-box {
+    background: white;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+.feature-description {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #777;
+}
+
+.bi {
+    font-size: 2rem;
+    color: #ff6600;
+}
+
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    background: #f8f8f8;
+}
+
+.services .section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.services .service-item {
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.services .service-item:hover {
+    transform: translateY(-10px);
+}
+
+.services .service-item img {
+    width: 100%;
+    height: auto;
+}
+
+.services .service-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.services .service-price {
+    font-size: 20px;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.services .service-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.social-links a:hover {
+    color: #ff6600;
+}
+
+/* Modal */
+.modal-content {
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.modal-header {
+    border-bottom: none;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-body .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-body .form-control {
+    border: 2px solid #ffc107;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.modal-body .form-control:focus {
+    border-color: #e0a800;
+    box-shadow: none;
+}
+
+.modal-body button {
+    background: #ffc107;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    width: 100%;
+}
